@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
 \usepackage{cite}
+\usepackage{url}
 \pagestyle{empty}
 
 \title{PINN-Assisted Compact Modeling and Residual Diagnosis for TFT SPICE Simulation}
@@ -16,6 +17,7 @@
 Yifan Yang\IEEEauthorrefmark{1}\IEEEauthorrefmark{2},
 Xiao Peng\IEEEauthorrefmark{1}\IEEEauthorrefmark{2},
 Yunhe Li\IEEEauthorrefmark{2},
+Zikang Mei\IEEEauthorrefmark{2},
 and Wei Tang\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}}
 \IEEEauthorblockA{\IEEEauthorrefmark{2}Shanghai Jiao Tong University, Shanghai, China\\
 \IEEEauthorrefmark{1}Equal contribution: v1o2058@sjtu.edu.cn, px.126666@sjtu.edu.cn\\
@@ -149,7 +151,7 @@ The residual PINN is evaluated as a diagnostic and local-correction layer on top
 Bias-region analysis gives the clearest interpretation. Averaged over holdout devices, all regions except low-\(V_G\)/mid-\(V_D\) improve after residual correction. The strongest improvements occur in mid-\(V_G\)/mid-\(V_D\), mid-\(V_G\)/high-\(V_D\), and low-\(V_G\)/high-\(V_D\) regions. Device-resolved analysis shows the main failure modes: high-\(V_G\)/mid-\(V_D\) output curves of \(80/10~\mu\mathrm{m}\), high-\(V_G\)/low-to-mid-\(V_D\) transfer curves of \(80/10~\mu\mathrm{m}\), and low-\(V_G\)/low-to-mid-\(V_D\) transfer curves of \(80/40~\mu\mathrm{m}\). These regions suggest possible missing descriptions in high-gate-bias linear operation, low-current transfer behavior, or geometry-dependent scaling.
 
 \section{Conclusion}
-A compact-model-centered PINN workflow was evaluated for TFT SPICE modeling with limited measured geometries. Conventional compact fitting provides accurate measured-device fits and simulator-compatible parameters, but width/length extrapolation can fail for the smallest channel length. A parameter PINN improves the most difficult geometry holdout by learning smooth dimension-dependent compact parameters. A residual PINN improves many measured and holdout bias regions and provides a useful map of where the compact model leaves structured error. Its local over-correction in selected holdout regions suggests that the residual network should be used as a diagnostic layer before being converted into a compact-model correction term. Future work will extend the geometry set and test whether the residual patterns can be translated into explicit SPICE model terms for high-gate-bias and low-current operation.
+A compact-model-centered PINN workflow was evaluated for TFT SPICE modeling with limited measured geometries. Conventional compact fitting provides accurate measured-device fits and simulator-compatible parameters, but width/length extrapolation can fail for the smallest channel length. A parameter PINN improves the most difficult geometry holdout by learning smooth dimension-dependent compact parameters. A residual PINN improves many measured and holdout bias regions and provides a useful map of where the compact model leaves structured error. Its local over-correction in selected holdout regions suggests that the residual network should be used as a diagnostic layer before being converted into a compact-model correction term. Processed data and paper-generation files are available at \url{https://github.com/Yang-Fran/tft-pinn-compact-modeling}. Future work will extend the geometry set and test whether the residual patterns can be translated into explicit SPICE model terms for high-gate-bias and low-current operation.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
